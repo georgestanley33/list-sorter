@@ -18,3 +18,4 @@
 
 ## Updates:
 - Timer now shown after each sort, allows you to visually compare each method
+- Extra option, allows you to run all functions at once to easily compare the time of all of them.
