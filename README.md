@@ -15,3 +15,6 @@
 - How correct each algorithm is
 - How different algorithms process the same user defined list
 - How custom implementations differ from Python's inbuilt sorted() function
+
+## Updates:
+- Timer now shown after each sort, allows you to visually compare each method
