@@ -12,3 +12,8 @@
 
 ##### An additional option allows the user to run all algorithms at once, displaying their times and results seperately. This makes it easy to directly compare their performance.
 
+### User Interface:
+Note; The GUI for this script was fully generated using an LLM to improve user accessibility. The core script functionality was manually implemented.
+
+![Image of UI](ui.png)
+

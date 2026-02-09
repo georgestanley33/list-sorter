@@ -79,128 +79,155 @@ def QuickSort(x,low=0,high=None):
         QuickSort(x,pivotIndex+1,high)
     return x
 
-print("---List Sorter---")
-lst = list(map(int, input("Enter all values in the list separated by spaces: ").split()))
 
-print()
-print("Which sorting algorithm do you want to use?")
-print("1. Bubble Sort")
-print("2. Insertion Sort")
-print("3. Selection Sort")
-print("4. Merge Sort")
-print("5. Quick Sort")
-print("6. Python sorted() method")
-print("7. Use all methods to compare")
-print()
-choice = int(input("Enter the number of your choice:  "))
+def main():
+    print("---List Sorter---")
+    lst = list(map(int, input("Enter all values in the list separated by spaces: ").split()))
 
-sortingMethod = ""
+    print()
+    print("Which sorting algorithm do you want to use?")
+    print("1. Bubble Sort")
+    print("2. Insertion Sort")
+    print("3. Selection Sort")
+    print("4. Merge Sort")
+    print("5. Quick Sort")
+    print("6. Python sorted() method")
+    print("7. Use all methods to compare")
+    print()
+    choice = int(input("Enter the number of your choice:  "))
 
-if(choice == 1):
-    sortingMethod = "Bubble Sort"
-else:
-    if(choice == 2):
+    if choice == 1:
+        sortingMethod = "Bubble Sort"
+    elif choice == 2:
         sortingMethod = "Insertion Sort"
+    elif choice == 3:
+        sortingMethod = "Selection Sort"
+    elif choice == 4:
+        sortingMethod = "Merge Sort"
+    elif choice == 5:
+        sortingMethod = "Quick Sort"
+    elif choice == 6:
+        sortingMethod = "Python sorted() function"
+    elif choice == 7:
+        sortingMethod = "All methods at once (to compare)"
     else:
-        if(choice == 3):
-            sortingMethod = "Selection Sort"
-        else:
-            if(choice == 4):
-                sortingMethod = "Merge Sort"
-            else:
-                if(choice == 5):
-                    sortingMethod = "Quick Sort"
-                else:
-                    if(choice == 6):
-                        sortingMethod = "Python sorted() function"
-                    else:
-                        if(choice == 7):
-                            sortingMethod = "All methods at once (to compare)"
+        sortingMethod = "Invalid choice"
 
-print()
-print("Please confirm you want to sort: ")
-print("Values: " , lst)
-print("Method: " , sortingMethod)
-confirmation = input("Enter Y/N to proceed/cancel.")
+    print()
+    print("Please confirm you want to sort: ")
+    print("Values: ", lst)
+    print("Method: ", sortingMethod)
+    confirmation = input("Enter Y/N to proceed/cancel: ")
 
-if confirmation.lower() == "y":
-    if(choice == 1):
+    if confirmation.lower() != "y":
+        raise Exception("Sorting Cancelled.")
+
+    if choice == 1:
+        data = lst.copy()
         startTime = time.perf_counter()
-        print(BubbleSort(lst))
+        result = BubbleSort(data)
         endTime = time.perf_counter()
-        print(f"Time taken: {(endTime-startTime) * 1000:.3f} ms")
-    if (choice == 2):
-        startTime = time.perf_counter()
-        print(InsertionSort(lst))
-        endTime = time.perf_counter()
-        print(f"Time taken: {(endTime - startTime) * 1000:.3f} ms")
-    if (choice == 3):
-        startTime = time.perf_counter()
-        print(SelectionSort(lst))
-        endTime = time.perf_counter()
-        print(f"Time taken: {(endTime - startTime) * 1000:.3f} ms")
-    if (choice == 4):
-        startTime = time.perf_counter()
-        print(MergeSort(lst))
-        endTime = time.perf_counter()
-        print(f"Time taken: {(endTime - startTime) * 1000:.3f} ms")
-    if (choice == 5):
-        startTime = time.perf_counter()
-        print(QuickSort(lst))
-        endTime = time.perf_counter()
-        print(f"Time taken: {(endTime - startTime) * 1000:.3f} ms")
-    if(choice == 6):
-        startTime = time.perf_counter()
-        print(sorted(lst))
-        endTime = time.perf_counter()
+        print(result)
         print(f"Time taken: {(endTime - startTime) * 1000:.3f} ms")
 
-    if(choice == 7):
+    elif choice == 2:
+        data = lst.copy()
+        startTime = time.perf_counter()
+        result = InsertionSort(data)
+        endTime = time.perf_counter()
+        print(result)
+        print(f"Time taken: {(endTime - startTime) * 1000:.3f} ms")
+
+    elif choice == 3:
+        data = lst.copy()
+        startTime = time.perf_counter()
+        result = SelectionSort(data)
+        endTime = time.perf_counter()
+        print(result)
+        print(f"Time taken: {(endTime - startTime) * 1000:.3f} ms")
+
+    elif choice == 4:
+        data = lst.copy()
+        startTime = time.perf_counter()
+        result = MergeSort(data)
+        endTime = time.perf_counter()
+        print(result)
+        print(f"Time taken: {(endTime - startTime) * 1000:.3f} ms")
+
+    elif choice == 5:
+        data = lst.copy()
+        startTime = time.perf_counter()
+        result = QuickSort(data)
+        endTime = time.perf_counter()
+        print(result)
+        print(f"Time taken: {(endTime - startTime) * 1000:.3f} ms")
+
+    elif choice == 6:
+        data = lst.copy()
+        startTime = time.perf_counter()
+        result = sorted(data)
+        endTime = time.perf_counter()
+        print(result)
+        print(f"Time taken: {(endTime - startTime) * 1000:.3f} ms")
+
+    elif choice == 7:
         print()
         print("BUBBLE SORT:")
+        data = lst.copy()
         startTime = time.perf_counter()
-        print(BubbleSort(lst))
+        result = BubbleSort(data)
         endTime = time.perf_counter()
+        print(result)
         print(f"Time taken: {(endTime - startTime) * 1000:.3f} ms")
 
         print()
         print("INSERTION SORT:")
+        data = lst.copy()
         startTime = time.perf_counter()
-        print(InsertionSort(lst))
+        result = InsertionSort(data)
         endTime = time.perf_counter()
+        print(result)
         print(f"Time taken: {(endTime - startTime) * 1000:.3f} ms")
 
         print()
         print("SELECTION SORT:")
+        data = lst.copy()
         startTime = time.perf_counter()
-        print(SelectionSort(lst))
+        result = SelectionSort(data)
         endTime = time.perf_counter()
+        print(result)
         print(f"Time taken: {(endTime - startTime) * 1000:.3f} ms")
 
         print()
         print("MERGE SORT:")
+        data = lst.copy()
         startTime = time.perf_counter()
-        print(MergeSort(lst))
+        result = MergeSort(data)
         endTime = time.perf_counter()
+        print(result)
         print(f"Time taken: {(endTime - startTime) * 1000:.3f} ms")
 
         print()
         print("QUICK SORT:")
+        data = lst.copy()
         startTime = time.perf_counter()
-        print(QuickSort(lst))
+        result = QuickSort(data)
         endTime = time.perf_counter()
+        print(result)
         print(f"Time taken: {(endTime - startTime) * 1000:.3f} ms")
 
         print()
         print("PYTHON INBUILT SORT:")
+        data = lst.copy()
         startTime = time.perf_counter()
-        print(sorted(lst))
+        result = sorted(data)
         endTime = time.perf_counter()
+        print(result)
         print(f"Time taken: {(endTime - startTime) * 1000:.3f} ms")
-else:
-    raise Exception("Sorting Cancelled.")
+
+    else:
+        print("Invalid choice.")
 
 
-
-
-
+if __name__ == "__main__":
+    main()
