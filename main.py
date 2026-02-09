@@ -90,6 +90,7 @@ print("3. Selection Sort")
 print("4. Merge Sort")
 print("5. Quick Sort")
 print("6. Python sorted() method")
+print("7. Use all methods to compare")
 print()
 choice = int(input("Enter the number of your choice:  "))
 
@@ -112,6 +113,9 @@ else:
                 else:
                     if(choice == 6):
                         sortingMethod = "Python sorted() function"
+                    else:
+                        if(choice == 7):
+                            sortingMethod = "All methods at once (to compare)"
 
 print()
 print("Please confirm you want to sort: ")
@@ -146,6 +150,49 @@ if confirmation.lower() == "y":
         endTime = time.perf_counter()
         print(f"Time taken: {(endTime - startTime) * 1000:.3f} ms")
     if(choice == 6):
+        startTime = time.perf_counter()
+        print(sorted(lst))
+        endTime = time.perf_counter()
+        print(f"Time taken: {(endTime - startTime) * 1000:.3f} ms")
+
+    if(choice == 7):
+        print()
+        print("BUBBLE SORT:")
+        startTime = time.perf_counter()
+        print(BubbleSort(lst))
+        endTime = time.perf_counter()
+        print(f"Time taken: {(endTime - startTime) * 1000:.3f} ms")
+
+        print()
+        print("INSERTION SORT:")
+        startTime = time.perf_counter()
+        print(InsertionSort(lst))
+        endTime = time.perf_counter()
+        print(f"Time taken: {(endTime - startTime) * 1000:.3f} ms")
+
+        print()
+        print("SELECTION SORT:")
+        startTime = time.perf_counter()
+        print(SelectionSort(lst))
+        endTime = time.perf_counter()
+        print(f"Time taken: {(endTime - startTime) * 1000:.3f} ms")
+
+        print()
+        print("MERGE SORT:")
+        startTime = time.perf_counter()
+        print(MergeSort(lst))
+        endTime = time.perf_counter()
+        print(f"Time taken: {(endTime - startTime) * 1000:.3f} ms")
+
+        print()
+        print("QUICK SORT:")
+        startTime = time.perf_counter()
+        print(QuickSort(lst))
+        endTime = time.perf_counter()
+        print(f"Time taken: {(endTime - startTime) * 1000:.3f} ms")
+
+        print()
+        print("PYTHON INBUILT SORT:")
         startTime = time.perf_counter()
         print(sorted(lst))
         endTime = time.perf_counter()
