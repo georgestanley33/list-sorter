@@ -87,6 +87,7 @@ print("2. Insertion Sort")
 print("3. Selection Sort")
 print("4. Merge Sort")
 print("5. Quick Sort")
+print("6. Python sorted() method")
 print()
 choice = int(input("Enter the number of your choice:  "))
 
@@ -106,6 +107,9 @@ else:
             else:
                 if(choice == 5):
                     sortingMethod = "Quick Sort"
+                else:
+                    if(choice == 6):
+                        sortingMethod = "Python sorted() function"
 
 print()
 print("Please confirm you want to sort: ")
@@ -124,6 +128,8 @@ if confirmation.lower() == "y":
         print(MergeSort(lst))
     if (choice == 5):
         print(QuickSort(lst))
+    if(choice == 6):
+        print(sorted(lst))
 else:
     raise Exception("Sorting Cancelled.")
 
